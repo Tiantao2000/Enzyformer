@@ -76,6 +76,7 @@ python score_predictions.py \
 
 ### first ec level
 ```bash
+cd ec_assignment
 python preprocess.py --rank first --fingerprint rxnfp
 python train-triplet.py --training_data rxn_first --model_name rxn_first_triplet --epoch 2000000 --fingerprint rxnfp
 python inference_rxn.py --rank first --infer_mode max --train_mode triplet --fingerprint rxnfp
