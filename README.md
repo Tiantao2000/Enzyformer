@@ -88,7 +88,7 @@ python train-triplet.py --training_data rxn_second --model_name rxn_second_tripl
 python inference_rxn.py --rank second --infer_mode max --train_mode triplet --fingerprint rxnfp
 ```
 
-# third ec level
+### third ec level
 ```bash
 python preprocess.py --rank third --fingerprint rxnfp
 python train-triplet.py --training_data rxn_third --model_name rxn_third_triplet --epoch 1000000 --fingerprint rxnfp
