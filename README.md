@@ -37,11 +37,11 @@ pip install simpletransformers
 ## Data Preparation
 1. **Download dataset**  
    [Google Drive Dataset](https://drive.google.com/drive/folders/14rY863a-qdngGUnbF6BB7OJEJ8X6Sv5x?usp=drive_link)  
-   Place all files in `Retrosynthesis/data`.
+   Place all files in `./Retrosynthesis/data`.
 
 2. **Download pretrained checkpoints**  
    [Google Drive Checkpoints](https://drive.google.com/drive/folders/1hWeqqLjWYTOrwrvg1P3k7Uj8QyJ5US0o?usp=drive_link)  
-   Place all files in `Retrosynthesis/ckpt`.
+   Place all files in `./Retrosynthesis/ckpt`.
 
 ---
 
@@ -50,7 +50,7 @@ pip install simpletransformers
 Run the following commands for **training the model if needed** and **direct inference on Enzyformer**:
 
 ```bash
-cd ./Retrosynthesis/Chemformer
+cd ./Chemformer
 
 # Train the model (if needed)
 bash ../finetune-backward.sh
@@ -60,16 +60,16 @@ bash ../finetune-direct.sh
 
 # Score predictions
 python score_predictions.py \
-    -mode 5 \
+    -mode 2 \
     -beam_size 10 \
     -n_best 10 \
     -augmentation 1 \
-    -targets /home/tiantao/bioretro/Data/test.targets.txt \
+    -targets ./retrosyntheis/data/test.targets.txt \
     -process_number 8 \
     -score_alpha 1 \
-    -save_file outputs/final_results_mode_5_wo.txt \
+    -save_file ./retrosyntheis/otuputs/final_results_mode_5_wo.txt \
     -detailed \
-    -source /home/tiantao/bioretro/Data/test.sources.txt
+    -source ./retrosyntheis/data/test.sources.txt
 ```
 ## EC number assignment
 
