@@ -1,2 +1,2 @@
 # Enzyformer
-Enzyformer: Enhancing Enzymatic Retrosynthesis via Pretrained Transformers
+Enzyformer is a Two-Stage Pretrained Model for Enzymatic Retrosynthesis.
