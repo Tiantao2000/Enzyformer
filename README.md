@@ -1,6 +1,24 @@
 # Enzyformer
 Enzyformer is a **Two-Stage Pretrained Model for Enzymatic Retrosynthesis**.
 ![Figure 1](Figure1.png)
+
+## 🧪 Enzyformer - Colab Development Notebook
+
+We have set up a simple ​**Google Colab notebook**​ to help users quickly get started with ​**Enzyformer**.
+
+### 🔗 Notebook Link
+
+👉 [Open Enzyformer Colab Notebook](https://colab.research.google.com/drive/1dE9Ch7XgBLtsF2Q3EYtFkDHeXVjieTye?usp=sharing)
+
+### ✅ What is this for?
+
+This Colab notebook provides a ​**ready-to-run environment**​ where you can:
+
+- Use or experiment with the ​**Enzyformer**​ model
+- Quickly test functionalities without needing to set up a local machine
+- Ideal for quick prototyping, demos, or educational purposes
+
+
 ## Environment Setup
 
 ### 1. Enzymatic Retrosynthesis
