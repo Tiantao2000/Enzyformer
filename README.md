@@ -53,10 +53,10 @@ Run the following commands for **training the model if needed** and **direct inf
 cd ./Chemformer
 
 # Train the model (if needed)
-bash ../finetune-backward.sh
+bash ../Retrosynthesis/finetune-backward.sh
 
 # Or directly run inference on Enzyformer
-bash ../finetune-direct.sh
+bash ../Retrosynthesis/finetune-direct.sh
 
 # Score predictions
 python score_predictions.py \
