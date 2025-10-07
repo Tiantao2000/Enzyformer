@@ -1,4 +1,4 @@
-name: /home/tiantao/a800_data/miniforge3/envs/chemformer
+name: chemformer
 channels:
   - defaults
   - conda-forge
