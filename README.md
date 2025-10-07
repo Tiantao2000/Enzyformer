@@ -9,10 +9,10 @@ Enzyformer is a **Two-Stage Pretrained Model for Enzymatic Retrosynthesis**.
 mamba create -n enzymeformer_retro python=3.7
 mamba activate enzymeformer_retro
 pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
-pip3 install rdkit-pypi==2022.9.4
+pip install rdkit-pypi==2022.9.4
 pip install hydra-core --upgrade
-pip3 install pandas
-pip3 install pytorch-lightning==1.2.3
+pip install pandas
+pip install pytorch-lightning==1.2.3
 pip install git+https://github.com/MolecularAI/pysmilesutils.git
 ```
 
