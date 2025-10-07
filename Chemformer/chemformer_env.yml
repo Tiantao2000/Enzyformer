@@ -202,4 +202,4 @@ dependencies:
       - werkzeug==2.2.3
       - yarl==1.9.4
       - zipp==3.15.0
-prefix: /home/tiantao/a800_data/miniforge3/envs/chemformer
+
