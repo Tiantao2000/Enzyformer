@@ -59,9 +59,9 @@ pip install transformers
 pip install simpletransformers
 ```
 
-# Retrosynthesis Prediction
+## Retrosynthesis Prediction
 
-## Data Preparation
+### Data Preparation
 1. **Download dataset**  
    [Google Drive Dataset](https://drive.google.com/drive/folders/14rY863a-qdngGUnbF6BB7OJEJ8X6Sv5x?usp=drive_link)  
    Place all files in `./Retrosynthesis/data`.
@@ -72,7 +72,7 @@ pip install simpletransformers
 
 ---
 
-## Training and Inference
+### Training and Inference
 
 Run the following commands for **training the model if needed** and **direct inference on Enzyformer**:
 
