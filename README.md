@@ -4,16 +4,25 @@ Enzyformer is a **Two-Stage Pretrained Model for Enzymatic Retrosynthesis**.
 ## Environment Setup
 
 ### 1. Enzymatic Retrosynthesis
-Refer to the Chemformer environment setup:  
-[https://github.com/MolecularAI/Chemformer](https://github.com/MolecularAI/Chemformer)
+
+```bash
+mamba create -n enzymeformer_retro python=3.7
+mamba activate enzymeformer_retro
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+pip3 install rdkit-pypi==2022.9.4
+pip install hydra-core --upgrade
+pip3 install pandas
+pip3 install pytorch-lightning==1.2.3
+pip install git+https://github.com/MolecularAI/pysmilesutils.git
+```
 
 ### 2. Enzyme Assignment
 Create a dedicated environment and install required packages:
 
 ```bash
 # Create a Python 3.10 environment
-mamba create -n enzymeformer python=3.10
-mamba activate enzymeformer
+mamba create -n enzymeformer_ec python=3.10
+mamba activate enzymeformer_ec
 
 # Install PyTorch and corresponding CUDA (adjust based on your GPU)
 pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 \
