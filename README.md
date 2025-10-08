@@ -57,10 +57,11 @@ pip install transformers
 
 # Install Simple Transformers
 pip install simpletransformers
-```
+
 pip install rdkit-pypi==2022.9.4
 pip install drfp --no-deps
 pip install "numpy<2" --force-reinstall
+```
 
 ## Retrosynthesis Prediction
 
