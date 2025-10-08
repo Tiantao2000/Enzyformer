@@ -7,7 +7,7 @@ import numpy as np
 import subprocess
 import pickle
 import sys
-sys.path.append("/home/tiantao/bioretro/CLEAN/scripts")
+sys.path.append("./scripts")
 
 from distance_map import get_dist_map
 
