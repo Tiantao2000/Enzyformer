@@ -1,7 +1,7 @@
 from scripts.infer import *
 from argparse import ArgumentParser
 import sys
-sys.path.append("/home/tiantao/bioretro/CLEAN/scripts")
+sys.path.append("./scripts")
 import pandas as pd
 
 def main(args):
@@ -33,7 +33,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = ArgumentParser('csv generation')
-    parser.add_argument('-d', '--dataset', default='../Data/enzymatic_reactions.csv', help='Dataset to use')
+    parser.add_argument('-d', '--dataset', default='./data/enzymatic_reactions.csv', help='Dataset to use')
     parser.add_argument('-r', '--rank', default='first', help='rank to use')
     parser.add_argument('-i', '--infer_mode', default='max', help='infer_mode')
     parser.add_argument('-t', '--train_mode', default='triplet', help='train_mode')
