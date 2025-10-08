@@ -100,6 +100,21 @@ python score_predictions.py \
 ```
 ## EC number assignment
 
+### Data preparation
+## 1. Data Preparation
+
+1. **Download dataset**  
+   [Google Drive Dataset](https://drive.google.com/drive/folders/1lePKa3Y4owkjxZZqNbhmmQf_qf-0O3dv?usp=drive_link)  
+   Place all files in `/content/Enzyformer/Ec_assignment/data/distance_map`.
+
+   [Google Drive Dataset](https://drive.google.com/drive/folders/1okqhBcvI0miXXKArDw09YIk8_50pWzTj?usp=drive_link)  
+   Place all files in `/content/Enzyformer/Ec_assignment/data`.
+   
+   
+
+2. **Download pretrained checkpoints**  
+   [Google Drive Checkpoints](https://drive.google.com/drive/folders/1p0dduOtna4KLzQcVpfrOGRlP4JZ1NNU-?usp=drive_link)  
+   Place all files in `/content/Enzyformer/Ec_assignment/data/model`.
 
 ### first ec level
 ```bash
