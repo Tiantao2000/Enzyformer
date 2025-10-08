@@ -101,7 +101,6 @@ python score_predictions.py \
 ## EC number assignment
 
 ### Data preparation
-## 1. Data Preparation
 
 1. **Download dataset**  
    [Google Drive Dataset](https://drive.google.com/drive/folders/1lePKa3Y4owkjxZZqNbhmmQf_qf-0O3dv?usp=drive_link)  
