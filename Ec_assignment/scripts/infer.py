@@ -202,6 +202,5 @@ def infer_user_max_sep(train_data, test_data, fp, dim_input,
     eval_df = pd.DataFrame.from_dict(eval_dist)
     min_classes = eval_df.idxmin(axis=0)
     for index, value in min_classes.items():
-        print(f"For index: {index}: the ec number is {value}")
-    return min_classes
+        print(f"For index: {index}, the ec number is {value}")
 
