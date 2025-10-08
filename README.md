@@ -104,20 +104,20 @@ python score_predictions.py \
 
 1. **Download dataset**  
    [Google Drive Dataset](https://drive.google.com/drive/folders/1lePKa3Y4owkjxZZqNbhmmQf_qf-0O3dv?usp=drive_link)  
-   Place all files in `/content/Enzyformer/Ec_assignment/data/distance_map`.
+   Place all files in `./Ec_assignment/data/distance_map`.
 
    [Google Drive Dataset](https://drive.google.com/drive/folders/1okqhBcvI0miXXKArDw09YIk8_50pWzTj?usp=drive_link)  
-   Place all files in `/content/Enzyformer/Ec_assignment/data`.
+   Place all files in `./Ec_assignment/data`.
    
    
 
 2. **Download pretrained checkpoints**  
    [Google Drive Checkpoints](https://drive.google.com/drive/folders/1p0dduOtna4KLzQcVpfrOGRlP4JZ1NNU-?usp=drive_link)  
-   Place all files in `/content/Enzyformer/Ec_assignment/data/model`.
+   Place all files in `./Ec_assignment/data/model`.
 
 ### first ec level
 ```bash
-cd ec_assignment
+cd Ec_assignment
 python preprocess.py --rank first --fingerprint rxnfp
 python train-triplet.py --training_data rxn_first --model_name rxn_first_triplet --epoch 2000000 --fingerprint rxnfp
 python inference_rxn.py --rank first --infer_mode max --train_mode triplet --fingerprint rxnfp
