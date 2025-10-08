@@ -159,3 +159,49 @@ def infer_maxsep(train_data, test_data, fp, dim_input, report_metrics = False,
             msg = '-' * 75
             f.write(msg + '\n')
 
+def infer_user_max_sep(train_data, test_data, fp, dim_input,
+                 pretrained=True, model_name=None):
+    use_cuda = torch.cuda.is_available()
+    device = torch.device("cuda:0" if use_cuda else "cpu")
+    dtype = torch.float32
+    train_data_csv = pd.read_csv(f"./data/{train_data}.csv")
+    id_ec_train, ec_id_dict_train = get_ec_id_dict_csv(train_data_csv)
+    id_ec_test, _ = get_ec_id_dict_csv(test_data)
+    # load checkpoints
+    # NOTE: change this to LayerNormNet(512, 256, device, dtype)
+    # and rebuild with [python build.py install]
+    # if inferencing on model trained with supconH loss
+
+    model = LayerNormNet(512, 128, device, dtype, dim_input)
+
+    if pretrained:
+        try:
+            checkpoint = torch.load(f'./data/pretrained/{fp}/' + train_data + '.pth', map_location=device)
+        except FileNotFoundError as error:
+            raise Exception('No pretrained weights for this training data')
+    else:
+        try:
+            checkpoint = torch.load(f'./data/model/{fp}/' + model_name + '.pth')
+        except FileNotFoundError as error:
+            raise Exception('No model found!')
+
+    model.load_state_dict(checkpoint)
+    model.eval()
+    # load precomputed EC cluster center embeddings if possible
+    if train_data == "split70":
+        emb_train = torch.load('./data/pretrained/70.pt', map_location=device)
+    elif train_data == "split100":
+        emb_train = torch.load('./data/pretrained/100.pt', map_location=device)
+    else:
+        emb_train = model(fp_embedding(ec_id_dict_train, fp, device, dtype, train_data_csv))
+        torch.save(emb_train, f"./data/pretrained/{fp}/{train_data}.pt")
+
+    emb_test = model_embedding_fp_test(id_ec_test, fp, model, device, dtype, test_data)
+    eval_dist = get_dist_map_test(emb_train, emb_test, ec_id_dict_train, id_ec_test, device, dtype)
+    seed_everything()
+    eval_df = pd.DataFrame.from_dict(eval_dist)
+    min_classes = eval_df.idxmin(axis=0)
+
+    print(min_classes)
+    return min_classes
+
