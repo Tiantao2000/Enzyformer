@@ -9,7 +9,7 @@ import pickle
 import sys
 from argparse import ArgumentParser
 import sys
-sys.path.append("/home/tiantao/bioretro/CLEAN/scripts")
+sys.path.append("./scripts")
 from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassification
 from distance_map import get_dist_map
 # from rxnfp.models import SmilesClassificationModel
@@ -130,7 +130,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = ArgumentParser('csv generation')
-    parser.add_argument('-d', '--dataset', default='../Data/enzymatic_reactions.csv', help='Dataset to use')
+    parser.add_argument('-d', '--dataset', default='./data/enzymatic_reactions.csv', help='Dataset to use')
     parser.add_argument('-r', '--rank', default='first', help='rank to use')
     parser.add_argument(
         "-f", "--fingerprint",
