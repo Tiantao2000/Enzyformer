@@ -125,21 +125,21 @@ python score_predictions.py \
 ```bash
 cd Ec_assignment
 python preprocess.py --rank first --fingerprint rxnfp
-python train-triplet.py --training_data rxn_first --model_name rxn_first_triplet --epoch 500000 --fingerprint rxnfp
+python train-triplet.py --training_data rxn_first --model_name rxn_first_triplet --epoch 2000000 --fingerprint rxnfp
 python inference_rxn.py --rank first --infer_mode max --train_mode triplet --fingerprint rxnfp
 ```
 
 ### second ec level
 ```bash
 python preprocess.py --rank second --fingerprint rxnfp
-python train-triplet.py --training_data rxn_second --model_name rxn_second_triplet --epoch 500000 --fingerprint rxnfp
+python train-triplet.py --training_data rxn_second --model_name rxn_second_triplet --epoch 2000000 --fingerprint rxnfp
 python inference_rxn.py --rank second --infer_mode max --train_mode triplet --fingerprint rxnfp
 ```
 
 ### third ec level
 ```bash
 python preprocess.py --rank third --fingerprint rxnfp
-python train-triplet.py --training_data rxn_third --model_name rxn_third_triplet --epoch 500000 --fingerprint rxnfp
+python train-triplet.py --training_data rxn_third --model_name rxn_third_triplet --epoch 2000000 --fingerprint rxnfp
 python inference_rxn.py --rank third --infer_mode max --train_mode triplet --fingerprint rxnfp
 ```
 
