@@ -18,6 +18,11 @@ This Colab notebook provides a ​**ready-to-run environment**​ where you can:
 - Quickly test functionalities without needing to set up a local machine
 - Ideal for quick prototyping, demos, or educational purposes
 
+## License
+
+- **Chemformer component**: Apache License 2.0 (see `Chemformer/LICENSE`)  
+- **Other components**: MIT License (see `LICENSE`)
+
 
 ## Environment Setup
 
