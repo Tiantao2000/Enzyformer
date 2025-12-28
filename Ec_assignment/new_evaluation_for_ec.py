@@ -28,7 +28,7 @@ def main(args):
 
     assert len(df) == len(raw_test_file)
 
-    # 🔥 只初始化一次
+    
     ec_inferencer = ECInferencer(args)
 
     all_real_ecs, all_pred_ecs = [],[]
@@ -86,7 +86,7 @@ def main(args):
     true_label_flat = all_real_ecs
     true_label_flat = all_pred_ecs
 
-    # 多类指标使用 macro 平均
+    
     pre = precision_score(true_label_flat, pred_label_flat, average='weighted', zero_division=0)
     rec = recall_score(true_label_flat, pred_label_flat, average='weighted', zero_division=0)
     f1 = f1_score(true_label_flat, pred_label_flat, average='weighted', zero_division=0)
