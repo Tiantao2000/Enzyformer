@@ -148,6 +148,13 @@ python train-triplet.py --training_data rxn_third --model_name rxn_third_triplet
 python inference_rxn.py --rank third --infer_mode max --train_mode triplet --fingerprint rxnfp
 ```
 
+### prediction with a list of reactions
+```bash
+python inference_rxn_case.py -rxn "O=C1NC(CN1C2=CC=C(O)C=C2)=O>>NC(NC(C1=CC=C(O)C=C1)C(O)=O)=O" "CCO>>CC=O"
+```
+
+
+
 
 
 
