@@ -87,7 +87,7 @@ def format_esm(a):
     return a
 
 
-def load_bert(id, model, csv_file):
+def load_bert(id, model, csv_file, save_flag=True):
     rxn = list(csv_file[csv_file['Entry'] == id]['Sequence'])[0]
     tokenizer = DistilBertTokenizerFast.from_pretrained(
         "/home/tiantao/bioretro/SynthCoder/pretraining_logs/TensorBoard_logs/version_2/checkpoints/last.ckpt.dir/")
@@ -100,22 +100,25 @@ def load_bert(id, model, csv_file):
 
     embedding = last_hidden_state.mean(dim=1)  # [batch, hidden_dim]
     fp_float32 = embedding.float()
-    torch.save(fp_float32, f"./data/bert/{id}.pt")
+    if save_flag:
+        torch.save(fp_float32, f"./data/bert/{id}.pt")
     return fp_float32
 
 
-def load_rxn(id, csv_file):
+def load_rxn(id, csv_file, save_flag=True):
     rxn = list(csv_file[csv_file['Entry'] == id]['Sequence'])[0]
     fp = rxnfp_generator.convert(rxn)
     fp_float32 = torch.tensor(fp, dtype=torch.float32).reshape(1, len(fp))
-    torch.save(fp_float32, f"./data/rxnfp/{id}.pt")
+    if save_flag:
+        torch.save(fp_float32, f"/home/tiantao/bioretro/CLEAN/data/rxnfp/{id}.pt")
     return fp_float32
 
-def load_drfp(id, csv_file):
+def load_drfp(id, csv_file, save_flag=True):
     rxn = list(csv_file[csv_file['Entry'] == id]['Sequence'])[0]
     fp = DrfpEncoder.encode(rxn)
     fp_float32 = torch.tensor(fp[0], dtype=torch.float32).unsqueeze(0)
-    torch.save(fp_float32, f"./data/drfp/{id}.pt")
+    if save_flag:
+        torch.save(fp_float32, f"./data/drfp/{id}.pt")
     return fp_float32
 
 def fp_embedding(ec_id_dict, fp, device, dtype, train_file):
@@ -147,18 +150,18 @@ def fp_embedding(ec_id_dict, fp, device, dtype, train_file):
 
 
 
-def model_embedding_fp_test(id_ec_test, fp, model, device, dtype, test_file):
+def model_embedding_fp_test(id_ec_test, fp, model, device, dtype, test_file, save_flag=True):
     ids_for_query = list(id_ec_test.keys())
     # for ec in tqdm(list(ec_id_dict.keys())):
     bert_model = DistilBertForSequenceClassification.from_pretrained(
         "/home/tiantao/bioretro/SynthCoder/pretraining_logs/TensorBoard_logs/version_2/checkpoints/last.ckpt.dir/"
     )
     if fp == "bert":
-        esm_to_cat = [load_bert(id, bert_model, test_file) for id in ids_for_query]
+        esm_to_cat = [load_bert(id, bert_model, test_file, save_flag) for id in ids_for_query]
     elif fp == "rxnfp":
-        esm_to_cat = [load_rxn(id, test_file) for id in ids_for_query]
+        esm_to_cat = [load_rxn(id, test_file, save_flag) for id in ids_for_query]
     elif fp == "drfp":
-        esm_to_cat = [load_drfp(id, test_file) for id in ids_for_query]
+        esm_to_cat = [load_drfp(id, test_file, save_flag) for id in ids_for_query]
     else:
         raise ValueError(f"Unknown fp type: {fp}")
     esm_emb = torch.cat(esm_to_cat).to(device=device, dtype=dtype)
