@@ -1,5 +1,5 @@
 # Enzyformer
-Enzyformer is a **Two-Stage Pretrained Model for Enzymatic Retrosynthesis**.
+Enzyformer: a **Two-Stage Pretrained Model for Enzymatic Retrosynthesis**.
 ![Figure 1](figure1.png)
 
 ## 🧪 Enzyformer - Colab Development Notebook
