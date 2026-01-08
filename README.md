@@ -70,10 +70,10 @@ pip install "numpy<2" --force-reinstall
 ## Original dataset
 Our original dataset is available at  [zenodo](https://zenodo.org/records/17374923) . 
 
-## Retrosynthesis Prediction
+## Retrosynthesis Prediction (For random split)
 
 ### Data Preparation
-1. **Download dataset**  
+1. **Download dataset** 
    [Google Drive Dataset](https://drive.google.com/drive/folders/14rY863a-qdngGUnbF6BB7OJEJ8X6Sv5x?usp=drive_link)  
    Place all files in `./Retrosynthesis/data`.
 
