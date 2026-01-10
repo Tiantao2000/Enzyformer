@@ -108,6 +108,7 @@ def compute_rxnfp_distance(train_file, fp, name = "rxnfp"):
 
 
 def main(args):
+    os.makedirs(f"./data/{args['fingerprint']}", exist_ok=True)
     csv_file = pd.read_csv(args["dataset"])
     filtered_df = csv_file[csv_file["split"].isin(["train", "valid"])].reset_index(drop=True)
     ecs = list(filtered_df[f"{args['rank']}_rank_ec"])
