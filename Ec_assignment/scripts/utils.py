@@ -110,7 +110,7 @@ def load_rxn(id, csv_file, save_flag=True):
     fp = rxnfp_generator.convert(rxn)
     fp_float32 = torch.tensor(fp, dtype=torch.float32).reshape(1, len(fp))
     if save_flag:
-        torch.save(fp_float32, f"/home/tiantao/bioretro/CLEAN/data/rxnfp/{id}.pt")
+        torch.save(fp_float32, f"./data/rxnfp/{id}.pt")
     return fp_float32
 
 def load_drfp(id, csv_file, save_flag=True):
