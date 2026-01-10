@@ -109,7 +109,7 @@ python score_predictions.py \
     -detailed \
     -source ./retrosyntheis/data/test.sources.txt
 ```
-## EC number assignment
+## EC number prediction
 
 ### Data preparation
 
