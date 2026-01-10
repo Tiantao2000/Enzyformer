@@ -48,6 +48,7 @@ def main(args):
     emb_train = model(fp_embedding(ec_id_dict_train, fingerprint, device, dtype, train_data_csv))
 
     ec_number = infer_user_max_sep(train_data, df, fingerprint, emb_train, model)
+    print(ec_numer)
 
 class ECInferencer:
     def __init__(self, args):
