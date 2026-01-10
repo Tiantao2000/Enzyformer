@@ -39,7 +39,7 @@ pip install pytorch-lightning==1.2.3
 pip install git+https://github.com/MolecularAI/pysmilesutils.git
 ```
 
-### 2. Enzyme Assignment
+### 2. EC number prediction
 Create a dedicated environment and install required packages:
 
 ```bash
