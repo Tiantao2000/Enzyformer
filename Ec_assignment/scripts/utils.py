@@ -153,9 +153,9 @@ def fp_embedding(ec_id_dict, fp, device, dtype, train_file):
 def model_embedding_fp_test(id_ec_test, fp, model, device, dtype, test_file, save_flag=True):
     ids_for_query = list(id_ec_test.keys())
     # for ec in tqdm(list(ec_id_dict.keys())):
-    bert_model = DistilBertForSequenceClassification.from_pretrained(
-        "/home/tiantao/bioretro/SynthCoder/pretraining_logs/TensorBoard_logs/version_2/checkpoints/last.ckpt.dir/"
-    )
+    #bert_model = DistilBertForSequenceClassification.from_pretrained(
+    #    "/home/tiantao/bioretro/SynthCoder/pretraining_logs/TensorBoard_logs/version_2/checkpoints/last.ckpt.dir/"
+    #)
     if fp == "bert":
         esm_to_cat = [load_bert(id, bert_model, test_file, save_flag) for id in ids_for_query]
     elif fp == "rxnfp":
