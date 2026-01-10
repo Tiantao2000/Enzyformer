@@ -8,7 +8,7 @@ import warnings
 import pandas as pd
 from sklearn.metrics import cohen_kappa_score, matthews_corrcoef, accuracy_score
 import numpy as np
-
+import os 
 
 def warn(*args, **kwargs):
     pass
@@ -106,6 +106,7 @@ def infer_maxsep(train_data, test_data, fp, dim_input, report_metrics = False,
     model.load_state_dict(checkpoint)
     model.eval()
     # load precomputed EC cluster center embeddings if possible
+    os.makedirs(f"./data/pretrained/{fp}", exist_ok=True)
     if train_data == "split70":
         emb_train = torch.load('./data/pretrained/70.pt', map_location=device)
     elif train_data == "split100":
