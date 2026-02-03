@@ -21,7 +21,7 @@ This Colab notebook provides a ​**ready-to-run environment**​ where you can:
 ## License
 
 - **Chemformer component**: Apache License 2.0 (see `Chemformer/LICENSE`)  
-- **Other components**: MIT License (see `LICENSE`)
+- **Other components**: see `LICENSE`
 
 
 ## Environment Setup
